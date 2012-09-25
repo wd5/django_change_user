@@ -6,6 +6,8 @@ from django.http import HttpResponseRedirect
 
 
 class UserAdmin(admin.ModelAdmin):
+    ordering = ('username',)
+    list_per_page = 500
     actions = ['become', 'delete_selected']
 
     def become(self, request, queryset):
